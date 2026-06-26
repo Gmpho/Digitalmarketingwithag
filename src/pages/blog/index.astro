@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+posts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+---
+
+<BaseLayout title="Blog" description="Digital marketing insights, SEO strategies, and monetization guides.">
+  <div class="max-w-5xl mx-auto px-4 py-12">
+    <h1 class="text-3xl font-bold mb-2">Blog</h1>
+    <p class="text-gray-600 dark:text-gray-400 mb-10">
+      Insights on SEO, GEO, AEO, social automation, and building online revenue.
+    </p>
+    {posts.length > 0 ? (
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {posts.map(post => <BlogCard post={post} />)}
+      </div>
+    ) : (
+      <p class="text-gray-500">No posts yet.</p>
+    )}
+  </div>
+</BaseLayout>

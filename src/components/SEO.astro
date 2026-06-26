@@ -1,0 +1,56 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  type?: 'website' | 'article';
+  publishedTime?: string;
+  tags?: string[];
+}
+
+const {
+  title,
+  description = 'Digital marketing strategies, SEO tools, and monetization insights.',
+  image = '/favicon.svg',
+  type = 'website',
+  publishedTime,
+  tags,
+} = Astro.props;
+
+const site = 'https://digitalmarketingwithag.com';
+const fullTitle = `${title} — Digital Marketing with AG`;
+const canonical = Astro.url.pathname;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': type === 'article' ? 'BlogPosting' : 'WebSite',
+  headline: title,
+  description,
+  image,
+  url: `${site}${canonical}`,
+  author: {
+    '@type': 'Person',
+    name: 'AG',
+  },
+  ...(publishedTime ? { datePublished: publishedTime } : {}),
+  ...(tags ? { keywords: tags.join(', ') } : {}),
+};
+---
+
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<meta name="keywords" content={tags?.join(', ')} />
+<link rel="canonical" href={`${site}${canonical}`} />
+
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={`${site}${image}`} />
+<meta property="og:url" content={`${site}${canonical}`} />
+<meta property="og:type" content={type} />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={`${site}${image}`} />
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
