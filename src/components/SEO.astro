@@ -5,7 +5,11 @@ export interface Props {
   image?: string;
   type?: 'website' | 'article';
   publishedTime?: string;
+  dateModified?: string;
   tags?: string[];
+  faqs?: { question: string; answer: string }[];
+  breadcrumbs?: { name: string; url: string }[];
+  author?: string;
 }
 
 const {
@@ -14,27 +18,64 @@ const {
   image = '/favicon.svg',
   type = 'website',
   publishedTime,
+  dateModified,
   tags,
+  faqs,
+  breadcrumbs,
+  author = 'Digital Marketing with AG',
 } = Astro.props;
 
 const site = 'https://digitalmarketingwithag.com';
 const fullTitle = `${title} — Digital Marketing with AG`;
 const canonical = Astro.url.pathname;
 
-const schema = {
+const mainSchema = {
   '@context': 'https://schema.org',
   '@type': type === 'article' ? 'BlogPosting' : 'WebSite',
   headline: title,
   description,
-  image,
+  image: image.startsWith('http') ? image : `${site}${image}`,
   url: `${site}${canonical}`,
   author: {
     '@type': 'Person',
-    name: 'AG',
+    name: author,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Digital Marketing with AG',
+    logo: {
+      '@type': 'ImageObject',
+      url: `${site}/favicon.svg`
+    }
   },
   ...(publishedTime ? { datePublished: publishedTime } : {}),
+  ...(dateModified ? { dateModified: dateModified } : (publishedTime ? { dateModified: publishedTime } : {})),
   ...(tags ? { keywords: tags.join(', ') } : {}),
 };
+
+const faqSchema = faqs && faqs.length > 0 ? {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(faq => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer
+    }
+  }))
+} : null;
+
+const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: breadcrumbs.map((crumb, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: crumb.name,
+    item: crumb.url.startsWith('http') ? crumb.url : `${site}${crumb.url}`
+  }))
+} : null;
 ---
 
 <title>{fullTitle}</title>
@@ -44,13 +85,15 @@ const schema = {
 
 <meta property="og:title" content={fullTitle} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={`${site}${image}`} />
+<meta property="og:image" content={image.startsWith('http') ? image : `${site}${image}`} />
 <meta property="og:url" content={`${site}${canonical}`} />
 <meta property="og:type" content={type} />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={fullTitle} />
 <meta name="twitter:description" content={description} />
-<meta name="twitter:image" content={`${site}${image}`} />
+<meta name="twitter:image" content={image.startsWith('http') ? image : `${site}${image}`} />
 
-<script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
+<script is:inline type="application/ld+json" set:html={JSON.stringify(mainSchema)} />
+{faqSchema && <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
+{breadcrumbSchema && <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}

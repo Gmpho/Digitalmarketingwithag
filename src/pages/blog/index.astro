@@ -8,17 +8,25 @@ posts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 ---
 
 <BaseLayout title="Blog" description="Digital marketing insights, SEO strategies, and monetization guides.">
-  <div class="max-w-5xl mx-auto px-4 py-12">
-    <h1 class="text-3xl font-bold mb-2">Blog</h1>
-    <p class="text-gray-600 dark:text-gray-400 mb-10">
-      Insights on SEO, GEO, AEO, social automation, and building online revenue.
-    </p>
+  <div class="max-w-5xl mx-auto px-6 py-16 relative">
+    <div class="absolute top-0 right-1/4 w-80 h-80 bg-indigo-500/5 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+
+    <header class="mb-12">
+      <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-3 font-heading text-gray-900 dark:text-white">
+        Articles & <span class="bg-gradient-to-r from-indigo-500 to-purple-650 bg-clip-text text-transparent">Insights</span>
+      </h1>
+      <p class="text-gray-600 dark:text-gray-400 font-sans max-w-2xl">
+        Detailed technical guides on SEO, GEO, AEO, social automation, and passive digital monetization strategies.
+      </p>
+    </header>
+
     {posts.length > 0 ? (
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {posts.map(post => <BlogCard post={post} />)}
       </div>
     ) : (
-      <p class="text-gray-500">No posts yet.</p>
+      <p class="text-gray-500 dark:text-gray-400 font-sans">No publications found.</p>
     )}
   </div>
 </BaseLayout>
+

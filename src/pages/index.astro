@@ -9,65 +9,362 @@ const featured = posts.slice(0, 3);
 ---
 
 <BaseLayout title="Digital Marketing Strategies, SEO & Monetization">
-  <section class="max-w-5xl mx-auto px-4 pt-20 pb-16 text-center">
-    <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-      Modern Digital<br class="sm:hidden" />
-      <span class="text-indigo-500">Monetization</span>
+  <!-- Hero Section -->
+  <section class="max-w-5xl mx-auto px-6 pt-24 pb-16 text-center relative">
+    <!-- Glowing background badge -->
+    <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 border border-indigo-100 dark:border-indigo-900/50 text-xs font-bold uppercase tracking-wider mb-6 animate-pulse">
+      <span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
+      Search Optimization in 2026
+    </div>
+    
+    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 font-heading leading-tight max-w-4xl mx-auto">
+      Optimize for the <br class="hidden sm:inline" />
+      <span class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">Conversational Web</span>
     </h1>
-    <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8">
-      Strategies, tools, and frameworks for SEO, GEO, AEO, social media automation, and turning content into revenue.
+    
+    <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed font-sans">
+      Technical frameworks and actionable strategies for SEO, GEO, AEO, and turning organic intent into sustainable passive revenue.
     </p>
-    <a
-      href="/blog"
-      class="inline-flex items-center gap-2 bg-indigo-500 hover:bg-indigo-600 text-white px-6 py-3 rounded-lg font-medium transition-colors"
-    >
-      Read the Blog
-      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-      </svg>
-    </a>
+    
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a
+        href="/blog"
+        class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white px-7 py-3.5 rounded-xl font-semibold shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/30 transition-all hover:-translate-y-0.5 cursor-pointer"
+      >
+        Read the Blog
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+      <a
+        href="#sandbox"
+        class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800 px-7 py-3.5 rounded-xl font-semibold transition-all hover:-translate-y-0.5 cursor-pointer"
+      >
+        Try Sandbox
+      </a>
+    </div>
   </section>
 
-  <section class="max-w-5xl mx-auto px-4 pb-20">
-    <div class="grid md:grid-cols-3 gap-6 mb-12">
-      <div class="border border-gray-200 dark:border-gray-800 rounded-xl p-6 bg-white dark:bg-gray-900">
-        <div class="w-10 h-10 rounded-lg bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mb-4">
+  <!-- Core Features Grid -->
+  <section class="max-w-5xl mx-auto px-6 pb-20">
+    <div class="grid md:grid-cols-3 gap-6 mb-20">
+      <!-- Card 1 -->
+      <div class="relative group rounded-2xl p-6 glass-panel transition-all duration-300 hover:-translate-y-1 hover:border-indigo-500/30">
+        <div class="absolute inset-px bg-gradient-to-r from-indigo-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
+        <div class="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950/50 flex items-center justify-center border border-indigo-100 dark:border-indigo-900/30 mb-5">
           <svg class="w-5 h-5 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
         </div>
-        <h3 class="font-semibold mb-2">SEO & GEO</h3>
-        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-          Optimize for both traditional search and AI-powered generative engines.
+        <h3 class="text-lg font-bold mb-2 font-heading text-gray-900 dark:text-white">SEO & GEO</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed font-sans">
+          Index perfectly on traditional engines and establish deep authority mapping for generative AI model scanners.
         </p>
       </div>
-      <div class="border border-gray-200 dark:border-gray-800 rounded-xl p-6 bg-white dark:bg-gray-900">
-        <div class="w-10 h-10 rounded-lg bg-cyan-100 dark:bg-cyan-900 flex items-center justify-center mb-4">
-          <svg class="w-5 h-5 text-cyan-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
+      <!-- Card 2 -->
+      <div class="relative group rounded-2xl p-6 glass-panel transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/30">
+        <div class="absolute inset-px bg-gradient-to-r from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
+        <div class="w-10 h-10 rounded-xl bg-purple-50 dark:bg-purple-950/50 flex items-center justify-center border border-purple-100 dark:border-purple-900/30 mb-5">
+          <svg class="w-5 h-5 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
           </svg>
         </div>
-        <h3 class="font-semibold mb-2">AEO</h3>
-        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-          Structure content for AI answer engines like ChatGPT and Perplexity.
+        <h3 class="text-lg font-bold mb-2 font-heading text-gray-900 dark:text-white">AEO</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed font-sans">
+          Structure information specifically for answer crawlers (ChatGPT Search, Perplexity) to display your citations first.
         </p>
       </div>
-      <div class="border border-gray-200 dark:border-gray-800 rounded-xl p-6 bg-white dark:bg-gray-900">
-        <div class="w-10 h-10 rounded-lg bg-emerald-100 dark:bg-emerald-900 flex items-center justify-center mb-4">
+
+      <!-- Card 3 -->
+      <div class="relative group rounded-2xl p-6 glass-panel transition-all duration-300 hover:-translate-y-1 hover:border-emerald-500/30">
+        <div class="absolute inset-px bg-gradient-to-r from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
+        <div class="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 flex items-center justify-center border border-emerald-100 dark:border-emerald-900/30 mb-5">
           <svg class="w-5 h-5 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
         </div>
-        <h3 class="font-semibold mb-2">Monetization</h3>
-        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-          Turn traffic into revenue with ads, affiliates, and digital products.
+        <h3 class="text-lg font-bold mb-2 font-heading text-gray-900 dark:text-white">Monetization</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed font-sans">
+          Stack display ads, dynamic affiliates, and Web3 tokens together to turn every search visit into recurring revenue.
         </p>
       </div>
     </div>
 
-    <h2 class="text-2xl font-bold mb-6">Latest Posts</h2>
+    <!-- Interactive Growth Sandbox -->
+    <div id="sandbox" class="scroll-mt-24 mb-20">
+      <div class="glass-panel rounded-3xl p-6 md:p-8 shadow-xl relative overflow-hidden">
+        <!-- Background accents -->
+        <div class="absolute -right-10 -top-10 w-48 h-48 bg-indigo-500/5 rounded-full blur-2xl pointer-events-none"></div>
+        <div class="absolute -left-10 -bottom-10 w-48 h-48 bg-purple-500/5 rounded-full blur-2xl pointer-events-none"></div>
+
+        <div class="flex flex-col md:flex-row md:items-center justify-between border-b border-gray-200/50 dark:border-gray-900/30 pb-6 mb-8 gap-4">
+          <div>
+            <h2 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white font-heading">Interactive Growth Sandbox</h2>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Grade your optimization tags and simulate multi-channel income streams.</p>
+          </div>
+          <div class="flex gap-1.5 bg-gray-100/80 dark:bg-gray-950 p-1.5 rounded-xl border border-gray-200/50 dark:border-gray-800/40">
+            <button id="tab-grader" class="px-4 py-2 rounded-lg text-xs font-bold cursor-pointer transition-all bg-white dark:bg-gray-800 text-indigo-600 dark:text-indigo-400 shadow-sm border border-gray-200/50 dark:border-gray-700/50">GEO/AEO Grader</button>
+            <button id="tab-calc" class="px-4 py-2 rounded-lg text-xs font-bold cursor-pointer transition-all text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-white">Revenue Estimator</button>
+          </div>
+        </div>
+
+        <!-- TAB 1: CONTENT GRADER -->
+        <div id="panel-grader" class="space-y-6">
+          <div class="grid md:grid-cols-5 gap-8">
+            <div class="md:col-span-3 space-y-4">
+              <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300">Enter Content Sample</label>
+              <textarea id="grader-input" rows="8" class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-800 bg-white dark:bg-gray-950 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition-all text-sm font-sans resize-none" placeholder="Paste your blog article introduction or paragraph here (e.g. &#10;## Is traditional SEO dead? &#10;**No, traditional SEO is not dead, but it has evolved into GEO and AEO...**&#10;)"></textarea>
+              <button id="grader-btn" class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold py-3 px-4 rounded-xl shadow-lg shadow-indigo-500/10 cursor-pointer transition-all text-sm">Analyze Optimization Score</button>
+            </div>
+            <div class="md:col-span-2 bg-gray-50/50 dark:bg-gray-950/20 border border-gray-200/50 dark:border-gray-900/40 rounded-xl p-5 space-y-5 flex flex-col justify-between">
+              <div>
+                <h3 class="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-3">Analysis Results</h3>
+                <div class="flex items-center gap-4 mb-5 border-b border-gray-200/50 dark:border-gray-900/30 pb-4">
+                  <div class="relative w-14 h-14 flex items-center justify-center rounded-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
+                    <span id="grader-badge" class="text-lg font-extrabold text-indigo-500 dark:text-indigo-400">--</span>
+                  </div>
+                  <div>
+                    <div class="text-[10px] text-gray-400 uppercase font-bold tracking-wider">Optimization Level</div>
+                    <div id="grader-level" class="font-extrabold text-sm text-gray-800 dark:text-gray-200">Not Graded Yet</div>
+                  </div>
+                </div>
+                <ul class="space-y-3.5 text-xs text-gray-500 dark:text-gray-400">
+                  <li class="flex items-center gap-2.5" id="criteria-heading">
+                    <span class="w-4 h-4 rounded-full flex items-center justify-center bg-gray-200/60 dark:bg-gray-900 text-[10px] font-bold">?</span>
+                    <span>Question Heading (H2/H3)</span>
+                  </li>
+                  <li class="flex items-center gap-2.5" id="criteria-bold">
+                    <span class="w-4 h-4 rounded-full flex items-center justify-center bg-gray-200/60 dark:bg-gray-900 text-[10px] font-bold">?</span>
+                    <span>Bold Direct Answer Statement</span>
+                  </li>
+                  <li class="flex items-center gap-2.5" id="criteria-length">
+                    <span class="w-4 h-4 rounded-full flex items-center justify-center bg-gray-200/60 dark:bg-gray-900 text-[10px] font-bold">?</span>
+                    <span>Readability Length (30-180 words)</span>
+                  </li>
+                  <li class="flex items-center gap-2.5" id="criteria-structure">
+                    <span class="w-4 h-4 rounded-full flex items-center justify-center bg-gray-200/60 dark:bg-gray-900 text-[10px] font-bold">?</span>
+                    <span>Lists or Tables Present</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="border-t border-gray-200/50 dark:border-gray-900/30 pt-4">
+                <p id="grader-feedback" class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed font-sans">
+                  Paste your text and run the analyzer to see how well AI models like ChatGPT and Perplexity can index your answer.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 2: REVENUE CALCULATOR -->
+        <div id="panel-calc" class="hidden space-y-6">
+          <div class="grid md:grid-cols-5 gap-8">
+            <div class="md:col-span-3 space-y-6">
+              <div>
+                <div class="flex justify-between text-sm mb-2.5">
+                  <label class="font-semibold text-gray-700 dark:text-gray-300">Estimated Monthly Views</label>
+                  <span id="val-views" class="font-extrabold text-indigo-500">10,000</span>
+                </div>
+                <input type="range" id="slider-views" min="1000" max="100000" step="1000" value="10000" class="w-full h-1.5 bg-gray-200 dark:bg-gray-800 rounded-lg appearance-none cursor-pointer" />
+              </div>
+              <div>
+                <div class="flex justify-between text-sm mb-2.5">
+                  <label class="font-semibold text-gray-700 dark:text-gray-300">Active Monthly Referrals</label>
+                  <span id="val-refs" class="font-extrabold text-indigo-500">15</span>
+                </div>
+                <input type="range" id="slider-refs" min="0" max="200" step="5" value="15" class="w-full h-1.5 bg-gray-200 dark:bg-gray-800 rounded-lg appearance-none cursor-pointer" />
+              </div>
+              <div>
+                <div class="flex justify-between text-sm mb-2.5">
+                  <label class="font-semibold text-gray-700 dark:text-gray-300">Affiliate Conversions</label>
+                  <span id="val-aff" class="font-extrabold text-indigo-500">10</span>
+                </div>
+                <input type="range" id="slider-aff" min="0" max="50" step="1" value="10" class="w-full h-1.5 bg-gray-200 dark:bg-gray-800 rounded-lg appearance-none cursor-pointer" />
+              </div>
+            </div>
+            <div class="md:col-span-2 bg-indigo-950/10 dark:bg-indigo-950/20 border border-indigo-500/10 dark:border-indigo-500/20 rounded-xl p-5 flex flex-col justify-between">
+              <div>
+                <h3 class="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-4">Estimated Monthly Returns</h3>
+                <div class="space-y-4 text-sm font-sans">
+                  <div class="flex justify-between border-b border-indigo-500/10 pb-2.5">
+                    <span class="text-gray-500 dark:text-gray-400">Display Ads (RPM)</span>
+                    <span id="out-ads" class="font-bold text-gray-850 dark:text-gray-200">$150.00</span>
+                  </div>
+                  <div class="flex justify-between border-b border-indigo-500/10 pb-2.5">
+                    <span class="text-gray-500 dark:text-gray-400">Sweatcoin Rewards</span>
+                    <span id="out-refs" class="font-bold text-gray-850 dark:text-gray-200">$10.00</span>
+                  </div>
+                  <div class="flex justify-between border-b border-indigo-500/10 pb-2.5">
+                    <span class="text-gray-500 dark:text-gray-400">Affiliate Comm.</span>
+                    <span id="out-aff" class="font-bold text-gray-850 dark:text-gray-200">$50.00</span>
+                  </div>
+                  <div class="flex justify-between pt-1">
+                    <span class="font-bold text-indigo-600 dark:text-indigo-400">Total Revenue</span>
+                    <span id="out-total" class="font-extrabold text-lg text-emerald-600 dark:text-emerald-400">$210.00</span>
+                  </div>
+                </div>
+              </div>
+              <div class="pt-4 mt-6 border-t border-indigo-500/10">
+                <a href="/blog/digital-monetization-strategies" class="block text-center w-full bg-gradient-to-r from-indigo-500 to-purple-650 hover:opacity-90 text-white font-bold py-2.5 px-4 rounded-lg transition duration-200 text-xs">Explore Monetization Guides</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Latest Posts Section -->
+    <h2 class="text-3xl font-extrabold tracking-tight mb-8 font-heading text-gray-900 dark:text-white">Latest Posts</h2>
     <div class="grid md:grid-cols-3 gap-6">
       {featured.map(post => <BlogCard post={post} />)}
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  function setupSandbox() {
+    const tabGrader = document.getElementById('tab-grader');
+    const tabCalc = document.getElementById('tab-calc');
+    const panelGrader = document.getElementById('panel-grader');
+    const panelCalc = document.getElementById('panel-calc');
+
+    // Tab switching
+    tabGrader?.addEventListener('click', () => {
+      tabGrader.className = "px-4 py-2 rounded-lg text-xs font-bold cursor-pointer transition-all bg-white dark:bg-gray-800 text-indigo-600 dark:text-indigo-400 shadow-sm border border-gray-200/50 dark:border-gray-700/50";
+      tabCalc?.classList.remove('bg-white', 'dark:bg-gray-800', 'text-indigo-600', 'dark:text-indigo-400', 'shadow-sm', 'border', 'border-gray-200/50', 'dark:border-gray-700/50');
+      tabCalc?.classList.add('text-gray-500', 'dark:text-gray-400', 'hover:text-gray-800', 'dark:hover:text-white');
+      panelGrader?.classList.remove('hidden');
+      panelCalc?.classList.add('hidden');
+    });
+
+    tabCalc?.addEventListener('click', () => {
+      tabCalc.className = "px-4 py-2 rounded-lg text-xs font-bold cursor-pointer transition-all bg-white dark:bg-gray-800 text-indigo-600 dark:text-indigo-400 shadow-sm border border-gray-200/50 dark:border-gray-700/50";
+      tabGrader?.classList.remove('bg-white', 'dark:bg-gray-800', 'text-indigo-600', 'dark:text-indigo-400', 'shadow-sm', 'border', 'border-gray-200/50', 'dark:border-gray-700/50');
+      tabGrader?.classList.add('text-gray-500', 'dark:text-gray-400', 'hover:text-gray-800', 'dark:hover:text-white');
+      panelCalc?.classList.remove('hidden');
+      panelGrader?.classList.add('hidden');
+    });
+
+    // Content Grader Logic
+    const graderInput = document.getElementById('grader-input') as HTMLTextAreaElement;
+    const graderBtn = document.getElementById('grader-btn');
+    const graderBadge = document.getElementById('grader-badge');
+    const graderLevel = document.getElementById('grader-level');
+    const graderFeedback = document.getElementById('grader-feedback');
+    const critHeading = document.getElementById('criteria-heading');
+    const critBold = document.getElementById('criteria-bold');
+    const critLength = document.getElementById('criteria-length');
+    const critStructure = document.getElementById('criteria-structure');
+
+    graderBtn?.addEventListener('click', () => {
+      const val = graderInput?.value || '';
+      if (!val.trim()) return;
+
+      const hasQuestion = /\?|h2|h3|##/i.test(val);
+      const hasBold = /\*\*|<strong>|<b>/i.test(val);
+      const words = val.trim().split(/\s+/).length;
+      const lengthOk = words >= 30 && words <= 180;
+      const hasStructure = /-|\*|\d\.|\|/i.test(val);
+
+      let score = 0;
+      if (hasQuestion) score += 25;
+      if (hasBold) score += 25;
+      if (lengthOk) score += 25;
+      if (hasStructure) score += 25;
+
+      // Update UI checkmarks
+      const updateCheck = (el: HTMLElement | null, ok: boolean) => {
+        if (!el) return;
+        if (ok) {
+          el.className = "flex items-center gap-2.5 text-emerald-600 dark:text-emerald-400 font-bold";
+          el.children[0].innerHTML = "✓";
+          el.children[0].className = "w-4 h-4 rounded-full flex items-center justify-center bg-emerald-100 dark:bg-emerald-950/40 text-[10px] font-bold";
+        } else {
+          el.className = "flex items-center gap-2.5 text-red-500 dark:text-red-400";
+          el.children[0].innerHTML = "✗";
+          el.children[0].className = "w-4 h-4 rounded-full flex items-center justify-center bg-red-100 dark:bg-red-950/40 text-[10px] font-bold";
+        }
+      };
+
+      updateCheck(critHeading, hasQuestion);
+      updateCheck(critBold, hasBold);
+      updateCheck(critLength, lengthOk);
+      updateCheck(critStructure, hasStructure);
+
+      if (graderBadge) graderBadge.innerText = score + '%';
+
+      if (graderLevel && graderFeedback) {
+        if (score === 100) {
+          graderLevel.innerText = "AEO Elite";
+          graderLevel.className = "font-extrabold text-sm text-emerald-600 dark:text-emerald-400";
+          graderFeedback.innerText = "Fantastic! Your snippet meets all Answer & Generative Engine criteria. It is direct, structured, and easy for AI crawlers to parse.";
+        } else if (score >= 75) {
+          graderLevel.innerText = "Highly Optimized";
+          graderLevel.className = "font-extrabold text-sm text-indigo-500 dark:text-indigo-400";
+          graderFeedback.innerText = "Great job! Your content sample is highly readable. Tweaking the remaining metrics will help seal the citations.";
+        } else if (score >= 50) {
+          graderLevel.innerText = "Standard SEO";
+          graderLevel.className = "font-extrabold text-sm text-yellow-600 dark:text-yellow-400";
+          graderFeedback.innerText = "This text satisfies basic crawling but lacks core AEO blocks like direct answers or table data. Refine for better LLM retrieval.";
+        } else {
+          graderLevel.innerText = "Fluff Draft";
+          graderLevel.className = "font-extrabold text-sm text-red-500 dark:text-red-400";
+          graderFeedback.innerText = "AI models prefer information density. Add an H2/H3 question header followed directly by a bolded direct answer statement.";
+        }
+      }
+    });
+
+    // Revenue Calculator Logic
+    const sliderViews = document.getElementById('slider-views') as HTMLInputElement;
+    const sliderRefs = document.getElementById('slider-refs') as HTMLInputElement;
+    const sliderAff = document.getElementById('slider-aff') as HTMLInputElement;
+
+    const valViews = document.getElementById('val-views');
+    const valRefs = document.getElementById('val-refs');
+    const valAff = document.getElementById('val-aff');
+
+    const outAds = document.getElementById('out-ads');
+    const outRefs = document.getElementById('out-refs');
+    const outAff = document.getElementById('out-aff');
+    const outTotal = document.getElementById('out-total');
+
+    function updateCalc() {
+      const views = parseInt(sliderViews?.value || '0');
+      const refs = parseInt(sliderRefs?.value || '0');
+      const aff = parseInt(sliderAff?.value || '0');
+
+      if (valViews) valViews.innerText = views.toLocaleString();
+      if (valRefs) valRefs.innerText = refs.toLocaleString();
+      if (valAff) valAff.innerText = aff.toLocaleString();
+
+      const adRev = (views / 1000) * 15;
+      
+      let refRev = 0;
+      if (refs >= 20) {
+        refRev = refs * 0.75;
+      } else {
+        refRev = refs * 0.15;
+      }
+
+      const affRev = aff * 5;
+      const total = adRev + refRev + affRev;
+
+      if (outAds) outAds.innerText = `$${adRev.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+      if (outRefs) outRefs.innerText = `$${refRev.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+      if (outAff) outAff.innerText = `$${affRev.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+      if (outTotal) outTotal.innerText = `$${total.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    }
+
+    sliderViews?.addEventListener('input', updateCalc);
+    sliderRefs?.addEventListener('input', updateCalc);
+    sliderAff?.addEventListener('input', updateCalc);
+    
+    // Initial run
+    updateCalc();
+  }
+
+  setupSandbox();
+  document.addEventListener('astro:page-load', setupSandbox);
+</script>
+

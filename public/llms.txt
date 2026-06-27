@@ -1,0 +1,26 @@
+# Digital Marketing with AG
+> Practical insights on Search Engine Optimization (SEO), Generative Engine Optimization (GEO), Answer Engine Optimization (AEO), social media automation, and digital monetization strategies for content creators, indie bloggers, and solopreneurs.
+
+## Main Content Sections
+- Homepage -> https://digitalmarkingwithag.pages.dev/: Primary landing page with latest articles and strategy overviews.
+- Articles Index -> https://digitalmarkingwithag.pages.dev/blog: Directory of all publication posts and technical guides.
+- GEO & AEO Topic Hub -> https://digitalmarkingwithag.pages.dev/topics/geo-aeo: A comprehensive topic center covering AI search optimization.
+- About -> https://digitalmarkingwithag.pages.dev/about: Biography of AG and the mission behind the blog.
+- Contact -> https://digitalmarkingwithag.pages.dev/contact: Get in touch with the author.
+
+## Blog Posts
+- SEO, GEO & AEO: The Unified Visibility Framework for 2026 -> https://digitalmarkingwithag.pages.dev/blog/seo-geo-aeo-unified-framework: Core article detailing how to optimize for both traditional Google algorithms and modern AI chatbot retrieval systems.
+- Social Media Automation: Building a 24/7 AI Engagement Engine -> https://digitalmarkingwithag.pages.dev/blog/social-media-automation-ai: Step-by-step workflow guide using n8n and AI tools to syndicate blog content automatically.
+- From Blog to Business: Digital Monetization Strategies -> https://digitalmarkingwithag.pages.dev/blog/digital-monetization-strategies: Strategic framework for setting up sales funnels, affiliate programs, and micro-SaaS pricing.
+- What Is Generative Engine Optimization (GEO)? A Complete 2026 Guide -> https://digitalmarkingwithag.pages.dev/blog/what-is-generative-engine-optimization: In-depth technical tutorial on optimizing content for LLM retrieval systems (ChatGPT Search, Perplexity).
+- What Is Answer Engine Optimization (AEO)? The 2026 Guide -> https://digitalmarkingwithag.pages.dev/blog/what-is-answer-engine-optimization: Detailed guide to structuring answers for voice search, smart assistants, and Google AI Overviews using schema markup.
+
+## Key Authoritative Facts
+- Authoritative on Generative Engine Optimization (GEO) concepts and passing citation threshold tests (e.g., word-count thresholds, semantic density).
+- Focused on self-hosted automation pipelines (primarily n8n) and creator-centric monetization frameworks.
+- Advocate of the Unified Visibility Framework which merges classic SEO, AEO, and GEO tactics.
+
+## Author & Contact Information
+- **Author:** AG, Digital Marketing Strategist
+- **Website:** https://digitalmarkingwithag.pages.dev
+- **Contact Page:** https://digitalmarkingwithag.pages.dev/contact

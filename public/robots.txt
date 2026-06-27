@@ -1,0 +1,30 @@
+User-agent: *
+Allow: /
+
+# Explicitly allow AI Search Crawlers for citation attribution
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# Block AI crawlers that train but do not attribute citations
+User-agent: CCBot
+Disallow: /
+
+Sitemap: https://digitalmarkingwithag.pages.dev/sitemap-index.xml

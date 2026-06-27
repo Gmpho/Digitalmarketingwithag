@@ -1,0 +1,237 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Topics', url: '/blog' },
+  { name: 'GEO & AEO Guide', url: '/topics/geo-aeo' }
+];
+
+const faqs = [
+  {
+    question: "What is the primary difference between SEO and GEO?",
+    answer: "Traditional SEO focuses on optimizing for keyword density and backlink signals to rank in list-based blue links. GEO focuses on structuring content so conversational AI engines can retrieve, synthesize, and cite it."
+  },
+  {
+    question: "What is Answer Engine Optimization (AEO)?",
+    answer: "AEO is a targeted optimization strategy aimed at formatting content for instant, single-sentence response systems like Siri, Alexa, Google Assistant, and featured snippets."
+  },
+  {
+    question: "How does FAQ schema help with voice search?",
+    answer: "FAQPage schema provides search crawlers with a pre-indexed structure of exact questions and answers, making it easy for text-to-speech voice synthesis engines to extract."
+  },
+  {
+    question: "What is the ideal paragraph length for AI engine extraction?",
+    answer: "AI engines favor self-contained, fact-rich paragraphs between 134 and 167 words that answer a specific query without fluff."
+  },
+  {
+    question: "Is traditional SEO dead?",
+    answer: "No. Traditional technical SEO provides the crawlable crawling framework and sitemap structures that AI crawlers need to discover and parse your content."
+  },
+  {
+    question: "How do I measure GEO performance?",
+    answer: "Track your brand's citation share inside conversational search engines, footnote click-through rates, and query inclusion metrics."
+  }
+];
+
+const posts = [
+  {
+    title: "SEO, GEO & AEO: The Unified Visibility Framework",
+    description: "The core master blueprint that connects traditional search optimization with modern LLM answering engines.",
+    url: "/blog/seo-geo-aeo-unified-framework",
+    tag: "Framework"
+  },
+  {
+    title: "What Is Generative Engine Optimization (GEO)? A Complete 2026 Guide",
+    description: "Learn how ChatGPT, Perplexity, and Google AI Overviews retrieve information and how to optimize for citations.",
+    url: "/blog/what-is-generative-engine-optimization",
+    tag: "GEO"
+  },
+  {
+    title: "What Is Answer Engine Optimization (AEO)? The 2026 Guide",
+    description: "Configure JSON-LD FAQ schemas and voice-search headings to place your brand in direct-answer modules.",
+    url: "/blog/what-is-answer-engine-optimization",
+    tag: "AEO"
+  }
+];
+---
+
+<BaseLayout 
+  title="GEO & AEO: AI Search Optimization"
+  description="The complete guide to Generative Engine Optimization (GEO) and Answer Engine Optimization (AEO) for content creators."
+  type="website"
+  {breadcrumbs}
+  {faqs}
+>
+  <div class="max-w-5xl mx-auto px-6 py-16 relative">
+    
+    <!-- Header Section -->
+    <header class="text-center mb-16 relative z-10">
+      <span class="px-3 py-1 text-xs font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950/40 rounded-full border border-indigo-200/50 dark:border-indigo-850/30">
+        Topic Center
+      </span>
+      <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white mt-4 mb-6 leading-tight font-heading">
+        GEO & AEO: The Complete Guide to <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">AI Search Optimization</span>
+      </h1>
+      
+      <!-- AEO Extraction Target Blockquote -->
+      <blockquote class="max-w-3xl mx-auto p-6 bg-gradient-to-r from-gray-50 to-indigo-50/30 dark:from-gray-950/20 dark:to-indigo-950/10 border-l-4 border-indigo-500 rounded-r-2xl text-left shadow-sm">
+        <p class="text-lg text-gray-700 dark:text-gray-300 font-sans italic leading-relaxed">
+          <strong>Generative Engine Optimization (GEO) and Answer Engine Optimization (AEO)</strong> represent the next phase of digital search strategy. These practices structure and optimize website content specifically for RAG retrieval models, AI assistants, and Google AI Overviews to synthesize and cite your brand.
+        </p>
+      </blockquote>
+    </header>
+
+    <!-- Problem & Solution Grid -->
+    <section class="grid md:grid-cols-2 gap-8 mb-20 relative z-10">
+      <!-- The Problem -->
+      <div class="p-8 rounded-2xl border border-gray-200/60 dark:border-gray-800/40 bg-white/50 dark:bg-gray-950/20 backdrop-blur-sm">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+          <span class="text-red-500">⚠️</span> The Search Crisis
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+          Traditional search click-through rates are declining. With Google AI Overviews appearing above organic results and AI chatbots directly answering queries, users rarely click standard list-based links. 
+        </p>
+        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+          If your marketing content is still optimized solely for classic keyword frequencies and link builders, it will be skipped entirely by LLM crawlers.
+        </p>
+      </div>
+
+      <!-- The Solution -->
+      <div class="p-8 rounded-2xl border border-indigo-200/50 dark:border-indigo-950/20 bg-indigo-50/10 dark:bg-indigo-950/10 backdrop-blur-sm">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+          <span class="text-green-500">✅</span> The Citation Strategy
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+          By adopting GEO and AEO, you adapt your site's structure to feed the LLM retrieval algorithms. You format your paragraphs into extractable chunks, configure schema graphs, and write explicit direct answers.
+        </p>
+        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+          Instead of fighting for declining organic positions, you position your brand as the cited authority source inside the generated answers.
+        </p>
+      </div>
+    </section>
+
+    <!-- Features as Benefits Table -->
+    <section class="mb-20 relative z-10">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center font-heading">
+        Why GEO & AEO Drive Real Value
+      </h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-250/60 dark:border-gray-850/40">
+        <table class="w-full text-left border-collapse bg-white dark:bg-gray-950/20">
+          <thead>
+            <tr class="bg-gray-50 dark:bg-gray-900/50 border-b border-gray-200 dark:border-gray-800">
+              <th class="p-4 text-sm font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wider">Optimization Feature</th>
+              <th class="p-4 text-sm font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wider">Strategic Benefit</th>
+              <th class="p-4 text-sm font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wider">Target Platforms</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-150 dark:divide-gray-850">
+            <tr>
+              <td class="p-4 font-semibold text-gray-900 dark:text-white">Fact-dense Paragraphs (134-167 words)</td>
+              <td class="p-4 text-gray-600 dark:text-gray-400">Fits the ideal token extraction windows of LLM chunkers.</td>
+              <td class="p-4 text-indigo-500 dark:text-indigo-400">ChatGPT, Perplexity</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold text-gray-900 dark:text-white">Structured Markdown Comparison Tables</td>
+              <td class="p-4 text-gray-600 dark:text-gray-400">Allows AI crawlers to summarize complex attributes instantly.</td>
+              <td class="p-4 text-indigo-500 dark:text-indigo-400">Google AI Overviews, Perplexity</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold text-gray-900 dark:text-white">Bolded Direct Answers Under Headers</td>
+              <td class="p-4 text-gray-600 dark:text-gray-400">Triggers semantic pattern matching for direct extraction.</td>
+              <td class="p-4 text-indigo-500 dark:text-indigo-400">Featured Snippets, Siri, Alexa</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold text-gray-900 dark:text-white">Dynamic FAQPage JSON-LD Schemas</td>
+              <td class="p-4 text-gray-600 dark:text-gray-400">Structures questions for immediate conversational indexing.</td>
+              <td class="p-4 text-indigo-500 dark:text-indigo-400">Google Search, Assistant Bots</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- How It Works Roadmap -->
+    <section class="mb-20 relative z-10">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-12 text-center font-heading">
+        How to Implement GEO & AEO in 5 Steps
+      </h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div class="p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white/40 dark:bg-gray-950/20 text-center">
+          <div class="w-10 h-10 rounded-full bg-indigo-500 text-white font-bold flex items-center justify-center mx-auto mb-4">1</div>
+          <h3 class="font-bold text-gray-900 dark:text-white mb-2">Audit Access</h3>
+          <p class="text-xs text-gray-500 dark:text-gray-400">Configure robots.txt to explicitly allow AI search agent crawlers.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white/40 dark:bg-gray-950/20 text-center">
+          <div class="w-10 h-10 rounded-full bg-indigo-500 text-white font-bold flex items-center justify-center mx-auto mb-4">2</div>
+          <h3 class="font-bold text-gray-900 dark:text-white mb-2">Build Directory</h3>
+          <p class="text-xs text-gray-500 dark:text-gray-400">Create a llms.txt standard file to map essential site details.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white/40 dark:bg-gray-950/20 text-center">
+          <div class="w-10 h-10 rounded-full bg-indigo-500 text-white font-bold flex items-center justify-center mx-auto mb-4">3</div>
+          <h3 class="font-bold text-gray-900 dark:text-white mb-2">Structure Body</h3>
+          <p class="text-xs text-gray-500 dark:text-gray-400">Insert bolded direct answers and layout tables in articles.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white/40 dark:bg-gray-950/20 text-center">
+          <div class="w-10 h-10 rounded-full bg-indigo-500 text-white font-bold flex items-center justify-center mx-auto mb-4">4</div>
+          <h3 class="font-bold text-gray-900 dark:text-white mb-2">Add Schemas</h3>
+          <p class="text-xs text-gray-500 dark:text-gray-400">Deploy dynamic FAQPage and BreadcrumbList JSON-LD blocks.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white/40 dark:bg-gray-950/20 text-center">
+          <div class="w-10 h-10 rounded-full bg-indigo-500 text-white font-bold flex items-center justify-center mx-auto mb-4">5</div>
+          <h3 class="font-bold text-gray-900 dark:text-white mb-2">Syndicate Brand</h3>
+          <p class="text-xs text-gray-500 dark:text-gray-400">Share summaries on social forums to generate off-page signals.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Articles Grid -->
+    <section class="mb-20 relative z-10">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center font-heading">
+        Featured Optimization Strategy Guides
+      </h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        {posts.map(post => (
+          <a href={post.url} class="group p-6 rounded-2xl border border-gray-200/60 dark:border-gray-850/40 bg-white dark:bg-gray-950/10 hover:border-indigo-500/40 hover:bg-indigo-50/5 dark:hover:bg-indigo-950/5 transition-all shadow-sm flex flex-col justify-between">
+            <div>
+              <span class="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-indigo-500 dark:text-indigo-400 bg-indigo-50/50 dark:bg-indigo-950/30 rounded border border-indigo-100/50 dark:border-indigo-900/30">
+                {post.tag}
+              </span>
+              <h3 class="text-lg font-bold text-gray-900 dark:text-white mt-3 group-hover:text-indigo-600 dark:group-hover:text-indigo-450 transition-colors font-heading leading-snug">
+                {post.title}
+              </h3>
+              <p class="text-sm text-gray-500 dark:text-gray-450 mt-2 leading-relaxed">
+                {post.description}
+              </p>
+            </div>
+            <div class="flex items-center gap-1 text-xs font-bold text-indigo-500 dark:text-indigo-400 mt-6 group-hover:gap-1.5 transition-all">
+              Read Guide 
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="max-w-4xl mx-auto mb-12 relative z-10">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center font-heading">
+        Common Questions About GEO & AEO
+      </h2>
+      <div class="space-y-6">
+        {faqs.map(faq => (
+          <div class="p-6 rounded-xl border border-gray-200/50 dark:border-gray-850/30 bg-white/30 dark:bg-gray-950/5">
+            <h3 class="text-base font-bold text-gray-900 dark:text-white font-sans flex items-start gap-2.5">
+              <span class="text-indigo-500 dark:text-indigo-400">Q:</span> {faq.question}
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed pl-6">
+              {faq.answer}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+  </div>
+</BaseLayout>

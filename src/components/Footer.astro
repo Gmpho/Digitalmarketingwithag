@@ -1,38 +1,60 @@
 ---
-
 const year = new Date().getFullYear();
 ---
 
-<footer class="border-t border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900">
-  <div class="max-w-5xl mx-auto px-4 py-10">
+<footer class="border-t border-gray-200/50 dark:border-gray-900/30 bg-gray-50/50 dark:bg-gray-950/20 backdrop-blur-sm transition-colors duration-300">
+  <div class="max-w-5xl mx-auto px-6 py-12">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div>
-        <h3 class="font-bold mb-3">DigitalMarketing<span class="text-indigo-500">AG</span></h3>
-        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-          Strategies, tools, and insights for modern digital monetization.
+      <div class="space-y-4">
+        <a href="/" class="flex items-center gap-2 text-lg font-extrabold tracking-tight">
+          <span class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">DigitalMarketing</span>
+          <span class="bg-indigo-600 dark:bg-indigo-500 text-white dark:text-gray-950 text-[9px] px-1.5 py-0.5 rounded font-black tracking-widest uppercase">AG</span>
+        </a>
+        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed max-w-xs">
+          Strategies, tools, and insights for modern digital monetization. Built with Astro, optimized for search & LLMs.
         </p>
       </div>
       <div>
-        <h4 class="font-semibold text-sm mb-3">Quick Links</h4>
-        <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-          <li><a href="/" class="hover:text-indigo-500 transition-colors">Home</a></li>
-          <li><a href="/blog" class="hover:text-indigo-500 transition-colors">Blog</a></li>
-          <li><a href="/about" class="hover:text-indigo-500 transition-colors">About</a></li>
-          <li><a href="/contact" class="hover:text-indigo-500 transition-colors">Contact</a></li>
+        <h4 class="font-bold text-sm text-gray-900 dark:text-white uppercase tracking-wider mb-4">Quick Links</h4>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="/" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Home</a></li>
+          <li><a href="/blog" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Blog</a></li>
+          <li><a href="/about" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">About</a></li>
+          <li><a href="/contact" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Contact</a></li>
         </ul>
       </div>
       <div>
-        <h4 class="font-semibold text-sm mb-3">Topics</h4>
-        <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-          <li>SEO & GEO</li>
-          <li>AEO Optimization</li>
-          <li>Social Media Automation</li>
-          <li>Digital Monetization</li>
+        <h4 class="font-bold text-sm text-gray-900 dark:text-white uppercase tracking-wider mb-4">Topics</h4>
+        <ul class="space-y-2.5 text-sm text-gray-600 dark:text-gray-400">
+          <li class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
+            SEO & GEO Strategies
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+            AEO Optimization
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-pink-500"></span>
+            Social Media Automation
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+            Digital Monetization Stack
+          </li>
         </ul>
       </div>
     </div>
-    <div class="mt-8 pt-6 border-t border-gray-200 dark:border-gray-800 text-center text-sm text-gray-500 dark:text-gray-500">
-      &copy; {year} Digital Marketing with AG. All rights reserved.
+    <div class="mt-12 pt-6 border-t border-gray-200/50 dark:border-gray-900/30 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500 dark:text-gray-500">
+      <div>
+        &copy; {year} Digital Marketing with AG. All rights reserved.
+      </div>
+      <div class="flex items-center gap-4">
+        <span class="text-xs px-2.5 py-1 rounded-full bg-gray-100 dark:bg-gray-900 text-gray-600 dark:text-gray-400 border border-gray-200/50 dark:border-gray-800/50">
+          ⚡ Astro v7 & Tailwind v4
+        </span>
+      </div>
     </div>
   </div>
 </footer>
+

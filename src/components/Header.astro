@@ -1,21 +1,60 @@
 ---
+const pathname = new URL(Astro.request.url).pathname;
 ---
 
-<header class="sticky top-0 z-50 border-b border-gray-200 dark:border-gray-800 bg-white/80 dark:bg-gray-950/80 backdrop-blur-sm">
-  <nav class="max-w-5xl mx-auto flex items-center justify-between px-4 h-16">
-    <a href="/" class="text-lg font-bold tracking-tight hover:text-indigo-500 transition-colors">
-      DigitalMarketing<span class="text-indigo-500">AG</span>
+<header class="sticky top-0 z-50 border-b border-gray-200/50 dark:border-gray-900/30 bg-white/70 dark:bg-gray-950/70 backdrop-blur-md transition-colors duration-300">
+  <nav class="max-w-5xl mx-auto flex items-center justify-between px-6 h-16">
+    <a href="/" class="flex items-center gap-2 text-xl font-extrabold tracking-tight hover:opacity-90 transition-opacity">
+      <span class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">DigitalMarketing</span>
+      <span class="bg-indigo-600 dark:bg-indigo-500 text-white dark:text-gray-950 text-[10px] px-2 py-0.5 rounded font-black tracking-widest uppercase">AG</span>
     </a>
-    <div class="flex items-center gap-6">
-      <a href="/" class="text-sm hover:text-indigo-500 transition-colors">Home</a>
-      <a href="/blog" class="text-sm hover:text-indigo-500 transition-colors">Blog</a>
-      <a href="/about" class="text-sm hover:text-indigo-500 transition-colors">About</a>
-      <a href="/contact" class="text-sm hover:text-indigo-500 transition-colors">Contact</a>
-      <button id="theme-toggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer" aria-label="Toggle theme">
-        <svg class="block dark:hidden w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <div class="flex items-center gap-1 md:gap-4">
+      <div class="flex items-center gap-1 md:gap-2">
+        <a 
+          href="/" 
+          class={`text-sm px-3 py-1.5 rounded-lg font-medium transition-all duration-200 ${
+            pathname === '/' 
+              ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50/50 dark:bg-indigo-950/30 border border-indigo-100/50 dark:border-indigo-900/50' 
+              : 'text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-gray-50 dark:hover:bg-gray-900/50'
+          }`}
+        >Home</a>
+        <a 
+          href="/blog" 
+          class={`text-sm px-3 py-1.5 rounded-lg font-medium transition-all duration-200 ${
+            pathname.startsWith('/blog') 
+              ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50/50 dark:bg-indigo-950/30 border border-indigo-100/50 dark:border-indigo-900/50' 
+              : 'text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-gray-50 dark:hover:bg-gray-900/50'
+          }`}
+        >Blog</a>
+        <a 
+          href="/about" 
+          class={`text-sm px-3 py-1.5 rounded-lg font-medium transition-all duration-200 ${
+            pathname.startsWith('/about') 
+              ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50/50 dark:bg-indigo-950/30 border border-indigo-100/50 dark:border-indigo-900/50' 
+              : 'text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-gray-50 dark:hover:bg-gray-900/50'
+          }`}
+        >About</a>
+        <a 
+          href="/contact" 
+          class={`text-sm px-3 py-1.5 rounded-lg font-medium transition-all duration-200 ${
+            pathname.startsWith('/contact') 
+              ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50/50 dark:bg-indigo-950/30 border border-indigo-100/50 dark:border-indigo-900/50' 
+              : 'text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-gray-50 dark:hover:bg-gray-900/50'
+          }`}
+        >Contact</a>
+      </div>
+      
+      <div class="w-[1px] h-6 bg-gray-200 dark:bg-gray-800 hidden sm:block mx-1"></div>
+      
+      <button 
+        id="theme-toggle" 
+        class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-900 transition-all cursor-pointer relative group overflow-hidden" 
+        aria-label="Toggle theme"
+      >
+        <svg class="block dark:hidden w-5 h-5 text-gray-700 hover:text-indigo-600 transition-transform duration-300 group-hover:rotate-45" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
         </svg>
-        <svg class="hidden dark:block w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg class="hidden dark:block w-5 h-5 text-yellow-400 transition-transform duration-500 group-hover:rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
         </svg>
       </button>
@@ -24,9 +63,15 @@
 </header>
 
 <script>
-  const btn = document.getElementById('theme-toggle');
-  btn?.addEventListener('click', () => {
-    const isDark = document.documentElement.classList.toggle('dark');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  });
+  function setupThemeToggle() {
+    const btn = document.getElementById('theme-toggle');
+    btn?.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  }
+
+  setupThemeToggle();
+  document.addEventListener('astro:page-load', setupThemeToggle);
 </script>
+

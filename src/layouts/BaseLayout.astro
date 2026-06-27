@@ -3,6 +3,7 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SEO from '../components/SEO.astro';
+import { ClientRouter } from 'astro:transitions';
 
 export interface Props {
   title: string;
@@ -10,36 +11,61 @@ export interface Props {
   image?: string;
   type?: 'website' | 'article';
   publishedTime?: string;
+  dateModified?: string;
   tags?: string[];
+  faqs?: { question: string; answer: string }[];
+  breadcrumbs?: { name: string; url: string }[];
+  author?: string;
 }
 
-const { title, description, image, type, publishedTime, tags } = Astro.props;
+const { title, description, image, type, publishedTime, dateModified, tags, faqs, breadcrumbs, author } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <SEO {title} {description} {image} {type} {publishedTime} {tags} />
+    <SEO {title} {description} {image} {type} {publishedTime} {dateModified} {tags} {faqs} {breadcrumbs} {author} />
+    <ClientRouter />
+    <script is:inline>
+      const getTheme = () => {
+        const theme = localStorage.getItem('theme');
+        if (theme) return theme;
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      };
+      
+      const setTheme = (theme) => {
+        if (theme === 'light') {
+          document.documentElement.classList.remove('dark');
+        } else {
+          document.documentElement.classList.add('dark');
+        }
+      };
+
+      // Initial run
+      setTheme(getTheme());
+
+      // Persist across view transitions
+      document.addEventListener('astro:after-swap', () => {
+        setTheme(getTheme());
+      });
+    </script>
   </head>
-  <body class="min-h-screen flex flex-col">
+  <body class="min-h-screen flex flex-col relative overflow-x-hidden">
+    <!-- Animated modern background -->
+    <div class="fixed inset-0 grid-bg -z-50 pointer-events-none"></div>
+    <div class="fixed -top-40 -left-40 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl -z-50 pointer-events-none animate-float"></div>
+    <div class="fixed top-1/2 left-1/3 w-80 h-80 bg-cyan-500/5 rounded-full blur-3xl -z-50 pointer-events-none animate-float-delayed"></div>
+    <div class="fixed -bottom-40 -right-40 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl -z-50 pointer-events-none animate-float"></div>
+
     <Header />
-    <main class="flex-1">
+    <main class="flex-1 relative z-10">
       <slot />
     </main>
     <Footer />
-    <script is:inline>
-      const theme = localStorage.getItem('theme');
-      if (theme === 'light') {
-        document.documentElement.classList.remove('dark');
-      } else if (theme === 'dark') {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    </script>
   </body>
 </html>
+

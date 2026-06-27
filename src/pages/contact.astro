@@ -3,27 +3,62 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Contact" description="Get in touch with Digital Marketing with AG.">
-  <div class="max-w-3xl mx-auto px-4 py-12">
-    <h1 class="text-3xl font-bold mb-2">Contact</h1>
-    <p class="text-gray-600 dark:text-gray-400 mb-8">
-      Have a question or want to collaborate? Send a message below.
-    </p>
-    <form action="#" method="POST" class="space-y-5">
-      <div>
-        <label for="name" class="block text-sm font-medium mb-1">Name</label>
-        <input type="text" id="name" name="name" required class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
-      </div>
-      <div>
-        <label for="email" class="block text-sm font-medium mb-1">Email</label>
-        <input type="email" id="email" name="email" required class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
-      </div>
-      <div>
-        <label for="message" class="block text-sm font-medium mb-1">Message</label>
-        <textarea id="message" name="message" rows="5" required class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
-      </div>
-      <button type="submit" class="bg-indigo-500 hover:bg-indigo-600 text-white px-6 py-2.5 rounded-lg font-medium transition-colors">
-        Send Message
-      </button>
-    </form>
+  <div class="max-w-3xl mx-auto px-6 py-16 relative">
+    <!-- Accent background blobs -->
+    <div class="absolute -top-10 -left-10 w-60 h-60 bg-purple-500/5 rounded-full blur-3xl pointer-events-none -z-10"></div>
+    
+    <div class="glass-panel rounded-3xl p-8 md:p-10 shadow-xl border border-gray-200/50 dark:border-gray-800/40 relative">
+      <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-2 font-heading text-gray-900 dark:text-white">
+        Get in <span class="bg-gradient-to-r from-indigo-500 to-purple-650 bg-clip-text text-transparent">Touch</span>
+      </h1>
+      <p class="text-sm text-gray-500 dark:text-gray-400 mb-8 font-sans">
+        Have a technical inquiry, collaboration proposal, or custom integration request? Drop a message below.
+      </p>
+      
+      <form action="#" method="POST" class="space-y-6">
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <label for="name" class="block text-xs font-bold uppercase tracking-wider text-gray-600 dark:text-gray-400 mb-2">Name</label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              required 
+              class="w-full px-4 py-3 rounded-xl border border-gray-250 dark:border-gray-800/60 bg-white dark:bg-gray-950 focus:border-indigo-500 dark:focus:border-indigo-500 focus:outline-none transition-all text-sm font-sans" 
+              placeholder="Your Name"
+            />
+          </div>
+          <div>
+            <label for="email" class="block text-xs font-bold uppercase tracking-wider text-gray-600 dark:text-gray-400 mb-2">Email Address</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              required 
+              class="w-full px-4 py-3 rounded-xl border border-gray-250 dark:border-gray-800/60 bg-white dark:bg-gray-950 focus:border-indigo-500 dark:focus:border-indigo-500 focus:outline-none transition-all text-sm font-sans" 
+              placeholder="name@company.com"
+            />
+          </div>
+        </div>
+        <div>
+          <label for="message" class="block text-xs font-bold uppercase tracking-wider text-gray-600 dark:text-gray-400 mb-2">Message</label>
+          <textarea 
+            id="message" 
+            name="message" 
+            rows="5" 
+            required 
+            class="w-full px-4 py-3 rounded-xl border border-gray-250 dark:border-gray-800/60 bg-white dark:bg-gray-950 focus:border-indigo-500 dark:focus:border-indigo-500 focus:outline-none transition-all text-sm font-sans resize-none" 
+            placeholder="Write your query details here..."
+          ></textarea>
+        </div>
+        <button 
+          type="submit" 
+          class="w-full sm:w-auto inline-flex items-center justify-center bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white px-7 py-3 rounded-xl font-semibold shadow-lg shadow-indigo-500/10 transition-all hover:-translate-y-0.5 cursor-pointer text-sm"
+        >
+          Send Message
+        </button>
+      </form>
+    </div>
   </div>
 </BaseLayout>
+
